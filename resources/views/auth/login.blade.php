@@ -23,22 +23,22 @@
 
 </head>
 
-<body id="page-top" style="background-color : #f2f2f2">
+<body id="page-top" style="background-color: #f2f2f2">
 
-
-    <div id="app">
+  <div id="app">
       <div class="login-brand">
-        <h1 class="text-center mt-3 brand-logo" ><b> Peduli Diri </b></h1>
+        <h1 class="text-center mt-3 brand-logo"><b> Peduli Diri </b></h1>
         <style>
           .login-brand {
             margin: 20px 0;
             margin-bottom: 40px;
             font-size: 24px;
+            font-family: "Times New Roman", Times, serif;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #4e73df;
+            color: #5a5a5a;
             text-align: center; }
-        </style>
+          </style>
       </div>
         <section class="section">
           <div class="container mt-5">
@@ -70,19 +70,19 @@
                       @csrf
                         <div class="form-group mb-4">
                           Nama
-                            <input id="email" type="text" class="form-control" name="name" required autofocus>
+                            <input id="email" onkeypress="return event.charCode < 48 || event.charCode  >57" type="text" class="form-control" name="name" required autofocus>
                         </div>
                         <div class="form-group mb-4">
                           NIK
-                            <input id="password" type="text" class="form-control" name="password" required>
+                            <input id="password" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <=57" type="text" class="form-control" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-user btn-block mt-4" style="font-size: 13px; height: 44px">
+                        <button type="submit" class="btn btn-dark btn-user btn-block mt-4" style="font-size: 13px; height: 44px">
                             Login
                         </button>
                       </form>
                       <hr>
                       <div class="text-center">
-                        <a href="/registrasi"><button style="font-size: 13px; height: 44px" class="btn btn-primary btn-user btn-block mt-4 rounded-pill"> Saya Pengguna Baru </button></a>
+                        <a href="/registrasi"><button style="font-size: 13px; height: 44px" class="btn btn-dark btn-user btn-block mt-4 rounded-pill"> Saya Pengguna Baru </button></a>
                       </div>
                   </div>
                   </div>

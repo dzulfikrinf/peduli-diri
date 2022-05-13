@@ -22,7 +22,7 @@ class LoginController extends Controller
             return redirect('/dashboard');
         }
 
-        return back()->with('LoginError', 'Login Gagal!');
+        return back()->with('LoginError', 'Nama atau NIK yang Anda Masukan salah!');
     }
     public function logout(Request $request)
     {

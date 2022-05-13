@@ -28,15 +28,16 @@
 
     <div id="app">
       <div class="login-brand">
-        <h1 class="text-center mt-3""><b> Peduli Diri </b></h1>
+        <h1 class="text-center mt-3 brand-logo" ><b> Peduli Diri </b></h1>
         <style>
           .login-brand {
             margin: 20px 0;
             margin-bottom: 40px;
             font-size: 24px;
+            font-family: "Times New Roman", Times, serif;
             text-transform: uppercase;
             letter-spacing: 4px;
-            color: #4e73df;
+            color: #5a5a5a;
             text-align: center; }
         </style>
       </div>
@@ -56,18 +57,25 @@
                         @csrf
                         <div class="form-group">
                           Nama
-                          <input id="name" type='text' class="form-control" name="name" tabindex="1" required>
+                          <input id="name" type='text' onkeypress="return event.charCode < 48 || event.charCode  >57" class="form-control @error('name') is-invalid @enderror" name="name" tabindex="1" required>
+                          @error('name')    
+                          <div class="invalid-feedback">
+                            {{ $message }}
+                          </div>
+                          @enderror
                         </div>
-      
+
                         <div class="form-group">
                           NIK
-                          <input id="email" type="text" class="form-control" name="email" tabindex="1" required autofocus>
+                          <input id="email" maxlength="16" type="text" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1" onkeypress="return event.charCode >= 48 && event.charCode <=57" required autofocus>
+                          @error('email')    
                           <div class="invalid-feedback">
-                            Nik jangan kosong
+                            {{ $message }}
                           </div>
+                          @enderror
                         </div>
                         <br>
-                        <button type="submit" class="btn btn-primary btn-user btn-block mt-3 rounded-pill" style="height: 45px; font-size: 13px">
+                        <button type="submit" class="btn btn-dark btn-user btn-block mt-3 rounded-pill" style="height: 45px; font-size: 13px">
                           Registrasi
                         </button>
                       </form>

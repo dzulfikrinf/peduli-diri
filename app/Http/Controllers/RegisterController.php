@@ -13,12 +13,14 @@ class RegisterController extends Controller
     public function register(Request $request){
         // dd($request->all());
         $request -> validate([
-            'email' => 'required|unique:users,email',
+            'email' => 'min:16|max:16|required|unique:users,email',
             'name' => 'required'
         ],
         [
+            'email.min'=>'NIK Minimal 16 digit',
+            'email.max'=>'NIK Maksimal 16 digit',
             'email.unique'=>'NIK sudah  terdaftar',
-            'name.required'=>'nama tidak boleh kosong'
+            'name.required'=>'Nama tidak boleh kosong!'
         ]);
         $data=[
             'name'=>$request->name,

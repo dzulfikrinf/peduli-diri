@@ -25,7 +25,7 @@
         </div>
         <div class="mb-3">
           <label for="exampleSuhuTubuh" class="form-label">Suhu Tubuh</label>
-          <input type="number" min="32" max="39" class="form-control" id="exampleSuhuTubuh" name="suhu">
+          <input type="number" min="32" max="39" onkeypress="return event.charCode >= 48 && event.charCode <=57" class="form-control" id="exampleSuhuTubuh" name="suhu">
         </div>
         <button type="submit" class="btn btn-primary mb-3">Simpan</button>
   </div>

@@ -31,6 +31,7 @@
                             <th>Jam</th>
                             <th>Lokasi</th>
                             <th>Suhu</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -40,6 +41,7 @@
                             <th>Jam</th>
                             <th>Lokasi</th>
                             <th>Suhu</th>
+                            <th>Aksi</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -50,6 +52,10 @@
                             <td>{{$peduli_diri->jam}}</td>
                             <td>{{$peduli_diri->lokasi}}</td>
                             <td>{{$peduli_diri->suhu}}</td>
+                            <td>
+                                    <a class="btn btn-primary btn-sm" href="/editdata/{{$peduli_diri->id}}">Edit</a>
+                                    <a class="btn btn-danger btn-sm" href="/hapusdata/{{$peduli_diri->id}}">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

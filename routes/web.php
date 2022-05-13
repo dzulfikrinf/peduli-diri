@@ -29,4 +29,13 @@ Route::post('/simpanPerjalanan',[PerjalananController::class,'simpanPerjalanan']
 Route::get('/data', [PerjalananController::class, 'tampildata'])->name('data')->middleware('auth');
 Route::get('/cari', [CariController::class, 'cariPerjalanan'])->middleware('auth');
 
+Route::get('/editdata/{id}', [PerjalananController::class, 'editData'])->middleware('auth');
+Route::post('/updatedata', [PerjalananController::class, 'updateData'])->middleware('auth');
+
+Route::get('/hapusdata/{id}', [PerjalananController::class, 'hapusData'])->middleware('auth');
+
+Route::get('/edit', [PerjalananController::class, 'edit'])->middleware('auth');
+
+
+
 Route::get('/logout',[LoginController::class,'logout'])->middleware('auth');

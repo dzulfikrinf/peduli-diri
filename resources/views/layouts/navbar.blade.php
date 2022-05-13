@@ -1,5 +1,27 @@
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
+    <a class="navbar-brand" href="#" style="color: #4e73df">
+        <i class="fas fa-theater-masks"></i>
+        Peduli Diri
+    </a>
+    <div class="topbar-divider d-none d-sm-block"></div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="/dashboard" style="font-size: 13px">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a class="nav-item nav-link {{ (request()->is('input')) ? 'active' : '' }}" href="/input" style="font-size: 13px">
+                <i class="fa-solid fa-keyboard"></i>
+                Isi Data Perjalanan
+            </a>
+            <a class="nav-item nav-link {{ (request()->is('data')) ? 'active' : '' }}" href="/data" style="font-size: 13px">
+                <i class="fas fa-fw fa-table"></i>
+                Catatan Perjalanan
+            </a>
+        </div>
+      </div>
+    
 
     <!-- Topbar Search -->
     <form class="d-none d-sm-inline-block form-inline mb-2 navbar-search" method="GET" action="/cari">
