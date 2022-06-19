@@ -54,7 +54,7 @@
                             <td>{{$peduli_diri->suhu}}</td>
                             <td>
                                     <a class="btn btn-primary btn-sm" href="/editdata/{{$peduli_diri->id}}">Edit</a>
-                                    <a class="btn btn-danger btn-sm" href="/hapusdata/{{$peduli_diri->id}}">Delete</a>
+                                    <a class="btn btn-danger btn-sm" href="/hapusdata/{{$peduli_diri->id}}">Hapus</a>
                             </td>
                         </tr>
                         @endforeach
